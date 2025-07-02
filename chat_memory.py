@@ -19,7 +19,12 @@ def get_chat_runnable():
         base_url="https://openrouter.ai/api/v1",
         api_key=api_key,
         model="deepseek/deepseek-chat-v3",
-        streaming=True  # ✅ Enable streaming
+        streaming=True,  # ✅ Enable streaming
+        temperature=0.7,
+        max_tokens=1000,
+        top_p=1,
+        frequency_penalty=0,
+        presence_penalty=0,
     )
 
     def get_history(session_id: str):

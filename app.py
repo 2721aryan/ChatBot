@@ -12,7 +12,8 @@ llm = ChatOpenAI(
     base_url="https://openrouter.ai/api/v1",
     api_key=os.getenv("OPENROUTER_API_KEY"),
     model="deepseek/deepseek-chat-v3",
-    streaming=True
+    streaming=True,
+    
 )
 
 # 🧠 Memory: List of message objects
