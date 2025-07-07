@@ -3,8 +3,8 @@ import os
 from dotenv import load_dotenv
 from langchain_core.runnables import RunnableLambda
 from langchain_core.runnables.history import RunnableWithMessageHistory
-from langchain_community.chat_models import ChatOpenAI
-from langchain_community.chat_message_histories import ChatMessageHistory
+from langchain_core.chat_history import ChatMessageHistory
+from langchain_openai import ChatOpenAI  # ✅ Correct OpenAI class for base_url use
 
 load_dotenv()
 
@@ -16,10 +16,10 @@ def get_chat_runnable():
         raise ValueError("❌ Missing OPENROUTER_API_KEY in .env")
 
     llm = ChatOpenAI(
-        base_url="https://openrouter.ai/api/v1",
+        base_url="https://openrouter.ai/api/v1",  # ✅ OpenRouter-compatible
         api_key=api_key,
         model="deepseek/deepseek-chat-v3",
-        streaming=True,  # ✅ Enable streaming
+        streaming=True,
         temperature=0.7,
         max_tokens=1000,
         top_p=1,
