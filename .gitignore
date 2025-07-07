@@ -10,3 +10,6 @@ venv/
 build/
 dist/
 *.egg-info/ 
+faiss_index/
+*.faiss
+*.pkl
